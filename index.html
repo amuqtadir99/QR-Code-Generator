@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Generate QR codes easily and download them.">
+    <meta name="keywords" content="QR Code, Generator, Download, Accessibility">
+    <meta name="author" content="Abdul Muqtadir">
+    <title>QR Code Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white flex justify-center items-center min-h-screen p-5">
+    <main class="bg-gray-800 shadow-lg rounded-lg p-8 text-center w-full max-w-md">
+        <h1 class="text-2xl font-semibold mb-6">QR Code Generator</h1>
+        
+        <div class="mb-6 text-left">
+            <label for="qrText" class="block text-sm font-medium text-gray-300 mb-2">Enter your text or URL</label>
+            <input type="text" id="qrText" class="w-full p-3 rounded-md bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter text or URL" aria-label="Enter text to generate QR code">
+        </div>
+
+        <button onclick="generateQR()" class="w-full bg-green-500 hover:bg-green-600 text-white py-3 rounded-lg font-semibold transition">
+            Generate QR Code
+        </button>
+
+        <div id="imgBox" class="mt-6 hidden">
+            <img src="" id="qrImage" alt="Generated QR Code" class="mx-auto p-2 bg-white rounded-md">
+            <a id="downloadBtn" class="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-lg font-semibold mt-4 block transition" download="qrcode.png">
+                Download Now
+            </a>
+        </div>
+
+        <footer class="mt-8 text-sm text-gray-400">
+            <p>Created by <a href="https://github.com/amuqtadir99" class="text-blue-400 hover:underline">Abdul Muqtadir</a> @witwebsolutions | 
+            <a href="https://www.witweb.com.au" class="text-blue-400 hover:underline">www.witweb.com.au</a></p>
+        </footer>
+    </main>
+
+    <script>
+        let imgBox = document.getElementById('imgBox');
+        let qrImage = document.getElementById('qrImage');
+        let qrText = document.getElementById('qrText');
+        let downloadBtn = document.getElementById('downloadBtn');
+
+        function generateQR() {
+            let qrTextValue = qrText.value.trim();
+
+            if (qrTextValue.length > 0) {
+                let qrURL = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(qrTextValue)}`;
+                
+                imgBox.classList.remove('hidden'); 
+                qrImage.src = qrURL; 
+                downloadBtn.href = qrURL;
+            } else {
+                alert('Please enter text or a URL!');
+            }
+        }
+    </script>
+</body>
+</html>
