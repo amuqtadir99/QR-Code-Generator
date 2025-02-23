@@ -66,7 +66,7 @@ Once the QR code is generated, you can click the "Download Now" button to downlo
 ## Live Demo
 
 You can view the live demo of the QR Code Generator here:  
-[QR Code Generator Demo](#)
+[QR Code Generator Demo](https://amuqtadir99.github.io/QR-Code-Generator/)
 
 ## Author
 
