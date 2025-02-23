@@ -76,10 +76,5 @@ Created by [Abdul Muqtadir](https://github.com/amuqtadir99) @witwebsolutions
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-```
 
-### Key Points:
-- **Live Demo Link**: Make sure to replace the placeholder `https://your-live-demo-link.com` with your actual hosted demo link once the project is deployed.
-- **License**: You can modify or remove the license section depending on whether you have a `LICENSE` file in your repo. If not, the MIT License can be kept as it’s a common open-source license.
 
-This version includes all necessary details and instructions for users and contributors, making it easy for anyone to use and understand the project.
